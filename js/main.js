@@ -11,27 +11,11 @@ jQuery(document).ready(function($) {
 		callbackBefore: function ( toggle, anchor ) {}, // Function to run before scrolling
 		callbackAfter: function ( toggle, anchor ) {} // Function to run after scrolling
 	 });
-	 
-	  
-	//COUNTDOWN TIMER
-	var newYear = new Date(); 
-    newYear = new Date(newYear.getFullYear() + 1, 1 - 1, 1); 
-    //$('#countdown').countdown({until: new Date(2015, 3-1, 28)}); // enter event day
-	
-	$('#countdown').countdown({until: $.countdown.UTCDate(-12, 2015, 4 - 1, 4), format: 'DHM'});
-	//$('#countdown').countdown({until: $.countdown.UTCDate(-12, 2015, 4 - 1, 28), format: 'HMS'});
-    
-    $('#removeCountdown').toggle(
-        function() {
-            $(this).text('Re-attach'); 
-            $('#defaultCountdown').countdown('destroy'); 
-        }, 
-        function() { 
-            $(this).text('Remove'); 
-            $('#defaultCountdown').countdown({until: newYear}); 
-        }
-    );
-	  
+
+	//Countdown
+	var elem=document.getElementById("countdown");
+	setInterval(ojidanieNG, 499,elem);
+		
 	//MILESTONE
     $('.timer').countTo();
 	
@@ -262,6 +246,26 @@ $(window).load(function(){
     infowindow.open(map, marker);
 	}
 	google.maps.event.addDomListener(window, 'load', init_map);
-	
+function ojidanieNG(elem)
+{
+	var today = new Date();
+	 
+	var BigDay = new Date("April 30, 2016 09:00:00 GMT+0200 ");
+	var timeLeft = (BigDay.getTime() - today.getTime());
+	 
+	var e_daysLeft = timeLeft / 86400000;
+	var daysLeft = Math.floor(e_daysLeft);
+	 
+	var e_hrsLeft = (e_daysLeft - daysLeft)*24;
+	var hrsLeft = Math.floor(e_hrsLeft);
+	 
+	var e_minsLeft = (e_hrsLeft - hrsLeft)*60;
+	var minsLeft = Math.floor(e_minsLeft);
+	 
+	var secsLeft = Math.floor((e_minsLeft - minsLeft)*60);
+	if (BigDay.getTime() > today.getTime() )
+		elem.innerHTML = (daysLeft ? daysLeft+' Gün, ' : '')+(!daysLeft&&!hrsLeft?'':hrsLeft+' Saat, ')+(!daysLeft&&!hrsLeft&&!minsLeft?'':minsLeft+' Dakika, ')+secsLeft+' Saniye';
+	else 
+		elem.innerHTML = 'Etkinlik Gerçekleşiyor'
 
-	
+}
