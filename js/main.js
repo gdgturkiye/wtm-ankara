@@ -228,17 +228,17 @@ $(window).load(function(){
 	function init_map() {
     var myOptions = {
         zoom: 14,
-        center: new google.maps.LatLng(39.869763,32.745618), 
+        center: new google.maps.LatLng(39.931674,32.849024), 
         mapTypeId: google.maps.MapTypeId.ROADMAP,
 		scrollwheel: false
     };
     map = new google.maps.Map(document.getElementById("gmap_canvas"), myOptions);
     marker = new google.maps.Marker({
         map: map,
-        position: new google.maps.LatLng(39.869763,32.745618)
+        position: new google.maps.LatLng(39.931674,32.849024)
     });
     infowindow = new google.maps.InfoWindow({
-        content: "<b>WTM ANKARA 2015</b><br/>Bilkent Cyberpark Konferans Salonu<br />B Blok Kat:1, Bilkent/Ankara"
+        content: "<b>WTM ANKARA 2016</b><br/>Cer Modern Modern Sanatlar Merkezi<br />Altınsoy Cad. No:3 06101, Sıhhiye/Ankara"
     });
     google.maps.event.addListener(marker, "click", function () {
         infowindow.open(map, marker);
