@@ -248,6 +248,12 @@ $(window).load(function(){
 	google.maps.event.addDomListener(window, 'load', init_map);
 function ojidanieNG(elem)
 {
+
+	var lang=elem.getAttribute("data-lang");
+	var langPhrase={
+		en:['Day','Hour','Minute','Second','Event is taking place'],
+		tr:['Gün','Saat','Dakika','Saniye','Etkinlik gerçekleşiyor']}
+		[lang];
 	var today = new Date();
 	 
 	var BigDay = new Date("April 30, 2016 09:00:00 GMT+0200 ");
@@ -264,8 +270,8 @@ function ojidanieNG(elem)
 	 
 	var secsLeft = Math.floor((e_minsLeft - minsLeft)*60);
 	if (BigDay.getTime() > today.getTime() )
-		elem.innerHTML = (daysLeft ? daysLeft+' Gün, ' : '')+(!daysLeft&&!hrsLeft?'':hrsLeft+' Saat, ')+(!daysLeft&&!hrsLeft&&!minsLeft?'':minsLeft+' Dakika, ')+secsLeft+' Saniye';
+		elem.innerHTML = (daysLeft ? daysLeft+' '+langPhrase[0]+(lang=="en"&&daysLeft>1?'s':'')+', ' : '')+(!daysLeft&&!hrsLeft?'':(hrsLeft+' '+langPhrase[1]+(lang=="en"&&hrsLeft>1?'s':'')+', '))+(!daysLeft&&!hrsLeft&&!minsLeft?'':(minsLeft+' '+langPhrase[2]+(lang=="en"&&minsLeft>1?'s':'')+', '))+(secsLeft>0?(secsLeft+' '+langPhrase[3]+(lang=="en"&&secsLeft>1?'s':'')):'');
 	else 
-		elem.innerHTML = 'Etkinlik Gerçekleşiyor'
+		elem.innerHTML = langPhrase[4];
 
 }
