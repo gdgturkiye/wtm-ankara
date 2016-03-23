@@ -215,15 +215,10 @@ body {
 /* TICKETS */
 
 #tickets {
-	/*background:#efefef;*/
-}
-
-
-/* SPONSOR */
-
-#sponsors{
 	background:#efefef;
 }
+
+/* SPONSOR */
 
 #sponsors h3 {
 	color:#999999;
@@ -339,13 +334,6 @@ select {
 	background: none;
 }
 
-.button-big{
-	color: inherit;
-	background: none;
-	font-size:16px;
-	padding:10px;
-}
-
 
 .button-light {
 	border: 1px solid #ffffff;
@@ -368,7 +356,6 @@ select {
 	color: #ffffff;
 	background: #008177;
 }
-
 
 
 /* PRELOAD */
