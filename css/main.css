@@ -10,7 +10,18 @@ body {
 section {
 	padding:35px 0;
 }
-
+.comingSoon {
+    height: 212px;
+    width: 212px;
+    background: #90A29A;
+    padding: 49px 10px;
+    color: #FFF;
+    text-transform: uppercase;
+    box-shadow: 4px 4px 18px -4px #000 inset;
+    font: bold 60px "Open Sans";
+    text-shadow: -3px 3px 10px #000;
+    border-radius: 50%;
+}
 h2 {
 	font-weight:600;
 	font-size:27px;
