@@ -22,10 +22,10 @@ section {
     text-shadow: -3px 3px 10px #000;
     border-radius: 50%;
 }
-.banner.container img {
+.gorsel.container img {
     max-height: 150px;
 }
-.banner.container a {
+.gorsel.container a {
     margin: 20px;
 }
 h2 {
