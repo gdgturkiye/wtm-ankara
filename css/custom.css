@@ -169,6 +169,18 @@ body {
 
 }
 
+.event .conference {
+	background:#efefef;
+	width: 41%;
+}
+
+.event .sandbox {
+	width: 41%;
+	background:#a2beed;
+
+}
+
+
 
 /* Schedule Pagination */
 
